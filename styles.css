@@ -1,0 +1,305 @@
+:root {
+  /* colors */
+  --fb-blue: #1877F2;
+  --fb-gray-light: #f7f7f7;
+  --fb-gray-mid: #dfe3ee;
+  --fb-gray-dark: #898F9C;
+  --white: #ffffff;
+  --black: #000000;
+  --tooltip-bg: #be4b49;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-small: 14px;
+  --font-base: 16px;
+  --font-large: 20px;
+  --font-header: 2.5rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 800;
+
+  /* padding / margin */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* border radius */
+  --radius-md: 6px;
+  --radius-err: 50%;
+
+  /* border color */
+  --border-color: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: var(--font-base);
+  background-color: var(--fb-gray-light);
+  color: var(--black);
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.header {
+  font-size: var(--font-header);
+  font-weight: var(--font-weight-bold);
+  color: var(--fb-blue);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.account {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account_header {
+  font-size: var(--font-large);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.account_discription {
+  font-size: var(--font-small);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  color: var(--fb-gray-dark);
+}
+
+.account_signup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.account_signup_names {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+}
+
+.account_signup_names input {
+  flex: 1;
+  padding: var(--space-md);
+  font-size: var(--font-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.date_of_birth {
+  display: flex;
+  gap: var(--space-sm);
+  height: 40px;
+
+}
+
+.date_of_birth select {
+  flex: 1;
+  padding-left: var(--space-md);
+  font-size: var(--font-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.gender_wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.gender_option {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.gender_option input[type="radio"] {
+  margin-left: var(--space-xs);
+}
+
+.custom_gender_section {
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.pronoun_select,
+.custom_gender_input {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  font-size: var(--font-size-sm);
+  outline: none;
+  width: 100%;
+  background: none;
+}
+
+.pronoun_select:focus,
+.custom_gender_input:focus {
+  border-color: var(--facebook-blue);
+}
+
+.pronoun_hint {
+ display: flex;
+  font-size: var(--font-small);
+  color: var(--fb-gray-dark);
+}
+
+.password_wrapper ,.name_wrapper,
+.surname_wrapper,
+.mobile_wrapper {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+}
+
+.password_tooltip , .name_tooltip,
+.surname_tooltip,
+.mobile_tooltip  {
+  position: absolute;
+  background-color: var(--tooltip-bg);
+  color: var(--white);
+  font-size: var(--font-small);
+  left: -345px;
+  top: 1px;
+  line-height: 1.4;
+  padding: 10px 12px;
+  border-radius: 6px;
+  max-width: 320px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.name_tooltip {
+  left: -170px;
+}
+
+.surname_tooltip {
+  left: 0;
+  top: 50px;
+}
+
+
+.password_tooltip.active ,.name_tooltip.active,
+.surname_tooltip.active,
+.mobile_tooltip.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.password_tooltip::after ,.name_tooltip::after,
+.surname_tooltip::after,
+.mobile_tooltip::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  border-width: var(--font-size-xs);
+  border-style: solid;
+  border-color: transparent transparent transparent var(--tooltip-bg);
+}
+
+.surname_tooltip::after {
+  top: -20px; 
+  right: auto; 
+  left: 20px;
+  transform: none; 
+  border-color: transparent transparent var(--tooltip-bg) transparent;
+}
+
+.account_signup input[type="text"],
+.account_signup input[type="password"] {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: var(--font-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  height: 40px;
+}
+
+.terms {
+  font-size: var(--font-small);
+  color: var(--fb-gray-dark);
+  text-align: center;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.account_signup button {
+  background-color: var(--fb-blue);
+  color: var(--white);
+  padding: var(--space-md);
+  font-size: var(--font-base);
+  font-weight: var(--font-weight-bold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.account_signup button:hover {
+  background-color: #155cbf; 
+}
+
+.account_signup a {
+  text-align: center;
+  display: block;
+  font-size: var(--font-small);
+  color: var(--fb-blue);
+  text-decoration: none;
+  margin-top: var(--space-sm);
+}
+
+.error-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background-color: var(--tooltip-bg);
+  border-radius: var(--radius-err);
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  pointer-events: none;
+  z-index: 5;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up for FB</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="header">facebook</h1>
+    <div class="account">
+      <h2 class="account_header">Create a new account</h2>
+      <p class="account_discription">It's quick and easy.</p>
+      <form class="account_signup" novalidate>
+        <div class="account_signup_names">
+  <div class="name_wrapper">
+    <input type="text" placeholder="First name" required />
+    <div class="name_tooltip">
+      What's your name?
+    </div>
+  </div>
+
+  <div class="surname_wrapper">
+    <input type="text" placeholder="Surname" required />
+    <div class="surname_tooltip">
+      What's your surname?
+    </div>
+  </div>
+</div>
+        <label>Date of Birth</label>
+        <div class="date_of_birth">
+          <select class="day"></select>
+          <select class="month"></select>
+          <select class="year"></select>
+        </div>
+  <label>Gender</label>
+  <div class="gender_wrapper">
+    <label class="gender_option">
+      Female
+      <input type="radio" name="gender" value="Female" />
+    </label>
+    <label class="gender_option">
+      Male
+      <input type="radio" name="gender" value="Male" />
+    </label>
+    <label class="gender_option">
+      Custom
+      <input type="radio" name="gender" value="Custom" />
+    </label>
+  </div>
+
+  <div class="custom_gender_section">
+    <select class="pronoun_select" required>
+      <option value="">Select your pronoun</option>
+      <option value="She: Wish her a happy birthday!">She: “Wish her a happy birthday!”</option>
+      <option value="He: Wish him a happy birthday!">He: “Wish him a happy birthday!”</option>
+      <option value="They: Wish them a happy birthday!">They: “Wish them a happy birthday!”</option>
+    </select>
+    <p class="pronoun_hint">Your pronoun is visible to everyone.</p>
+    <input type="text" placeholder="Gender (optional)" class="custom_gender_input" />
+  </div>
+<div class="mobile_wrapper">
+  <input type="text" placeholder="Mobile number or email address" required />
+  <div class="mobile_tooltip">
+    Enter a valid mobile number or email address that you can access.
+  </div>
+</div>          <div class="password_wrapper">
+          <input type="password" placeholder="New Password" required />
+          <div class="password_tooltip">
+           Enter a combination of at least six numbers, letters and punctuation marks (such as ! and &).
+          </div>
+          </div>
+        <p class="terms">
+          By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy.
+        </p>
+        <button type="submit">Sign Up</button>
+        <a href="#">Already have an account?</a>
+      </form>
+    </div>
+  </div>
+  <script src="facebook.js"></script>
+</body>
+</html>
